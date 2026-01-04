@@ -23,7 +23,6 @@ class PassengerInfo
         DateOfBirth = dateOfBirth;
         DateOfFlight = dateOfFlight;
         IsDomesticFlight = isDomesticFlight;
-
         IsRegularCustomer = datesVerifier.IsAdult(dateOfBirth) ? isRegularCustomer : false;
         IsBaby = datesVerifier.IsBaby(dateOfBirth);
         IsAdolescense = datesVerifier.IsAdolescense(dateOfBirth);
