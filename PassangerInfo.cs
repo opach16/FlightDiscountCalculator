@@ -20,14 +20,15 @@ class PassengerInfo
         DatesVerificator datesVerifier
     )
     {
-        this.DateOfBirth = dateOfBirth;
-        this.DateOfFlight = dateOfFlight;
-        this.IsDomesticFlight = isDomesticFlight;
-        this.IsRegularCustomer = isRegularCustomer;
-        this.IsBaby = datesVerifier.IsBaby(dateOfBirth);
-        this.IsAdolescense = datesVerifier.IsAdolescense(dateOfBirth);
-        this.IsAdult = datesVerifier.IsAdult(dateOfBirth);
-        this.IsSeasonalFlight = datesVerifier.IsSeasonal(dateOfFlight);
-        this.IsBoughtInAdvance = datesVerifier.IsBoughtInAdvance(dateOfFlight);
+        DateOfBirth = dateOfBirth;
+        DateOfFlight = dateOfFlight;
+        IsDomesticFlight = isDomesticFlight;
+
+        IsRegularCustomer = datesVerifier.IsAdult(dateOfBirth) ? isRegularCustomer : false;
+        IsBaby = datesVerifier.IsBaby(dateOfBirth);
+        IsAdolescense = datesVerifier.IsAdolescense(dateOfBirth);
+        IsAdult = datesVerifier.IsAdult(dateOfBirth);
+        IsSeasonalFlight = datesVerifier.IsSeasonal(dateOfFlight);
+        IsBoughtInAdvance = datesVerifier.IsBoughtInAdvance(dateOfFlight);
     }
 }

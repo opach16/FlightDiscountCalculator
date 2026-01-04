@@ -7,7 +7,7 @@ public class DatesVerificator
     public bool IsBaby(DateOnly dateOfBirth) => dateOfBirth > currentDate.AddYears(-2);
 
     public bool IsAdolescense(DateOnly dateOfBirth) =>
-        dateOfBirth <= currentDate.AddYears(-2) && dateOfBirth > currentDate.AddYears(-18);
+        dateOfBirth <= currentDate.AddYears(-2) && dateOfBirth >= currentDate.AddYears(-16);
 
     public bool IsAdult(DateOnly dateOfBirth) => dateOfBirth <= currentDate.AddYears(-18);
 
@@ -24,5 +24,5 @@ public class DatesVerificator
     }
 
     public bool IsBoughtInAdvance(DateOnly dateOfFlight) =>
-        dateOfFlight <= currentDate.AddMonths(5);
+        dateOfFlight >= currentDate.AddMonths(5);
 }
